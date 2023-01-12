@@ -12,10 +12,13 @@ services:
     mariadb:
         image: mariadb:latest
         volumes:
-            - vol-mariadb:/var/lib/mysql
+            - oneproject-mariadb:/var/lib/mysql
         environment:
             MYSQL_ALLOW_EMPTY_PASSWORD: "no"
-            MYSQL_ROOT_PASSWORD: "1234567890"
+            MYSQL_ROOT_PASSWORD: "myrootpass"
+            MYSQL_USER: "myuser"
+            MYSQL_PASSWORD: "mypass"
+            MYSQL_DATABASE: "mydb"
         restart: unless-stopped
 
     phpmyadmin:
@@ -27,4 +30,4 @@ services:
         restart: unless-stopped
 
 volumes:
-    vol-mariadb:            
+    oneproject-mariadb:
