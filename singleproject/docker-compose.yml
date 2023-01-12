@@ -12,7 +12,7 @@ services:
     mariadb:
         image: mariadb:latest
         volumes:
-            - oneproject-mariadb:/var/lib/mysql
+            - single-mariadb:/var/lib/mysql
         environment:
             MYSQL_ALLOW_EMPTY_PASSWORD: "no"
             MYSQL_ROOT_PASSWORD: "myrootpass"
@@ -30,4 +30,4 @@ services:
         restart: unless-stopped
 
 volumes:
-    oneproject-mariadb:
+    single-mariadb:
